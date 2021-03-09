@@ -1,0 +1,49 @@
+DELETE http://localhost:8080/api/v1/books/111
+Content-Type: application/x-www-form-urlencoded
+
+###
+POST http://localhost:8080/api/v1/books/
+Content-Type: application/json
+
+{
+    "id":111,
+    "author":"zyq",
+    "title" :"SpringBoot",
+    "content":"SpringBoot入门",
+    "createTime":"",
+    "readers": [
+        {
+            "name":"aaa",
+            "age":20
+        }
+    ]
+}
+
+###
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "id":133,
+  "title": "java"
+}
+
+###
+POST http://localhost:8080/api/v1/Articles/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="me.jpg"
+
+< ./me.jpg
+--WebAppBoundary--
+
+###
+GET http://localhost:8080/api/v1/books/111
+Accept: application/json
+
+###
+GET http://localhost:8080/api/v1/books/all
+Accept: application/json
+
+###
